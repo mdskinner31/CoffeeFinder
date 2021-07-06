@@ -67,7 +67,8 @@ namespace CoffeeFinder.Services
                                     IsParkingEasy = e.IsParkingEasy,
                                     IsDiningOutside = e.IsDiningOutside,
                                     IsDriveThru = e.IsDriveThru,
-                                    IsWifiAvailable = e.IsWifiAvailable
+                                    IsWifiAvailable = e.IsWifiAvailable,
+                                    Rate = e.Rate
                                 }
                         );
 
@@ -99,7 +100,8 @@ namespace CoffeeFinder.Services
                         IsParkingEasy = entity.IsParkingEasy,
                         IsDiningOutside = entity.IsDiningOutside,
                         IsDriveThru = entity.IsDriveThru,
-                        IsWifiAvailable = entity.IsWifiAvailable
+                        IsWifiAvailable = entity.IsWifiAvailable,
+                        Rate = entity.Rate
                     };
             }
         }
@@ -128,6 +130,7 @@ namespace CoffeeFinder.Services
                         entity.IsDiningOutside = model.IsDiningOutside;
                         entity.IsDriveThru = model.IsDriveThru;
                         entity.IsWifiAvailable = model.IsWifiAvailable;
+                        
 
 
 
