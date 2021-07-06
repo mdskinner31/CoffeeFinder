@@ -54,11 +54,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoffeeShopCreate.cs" />
+    <Compile Include="CoffeeShopDelete.cs" />
+    <Compile Include="CoffeeShopDetail.cs" />
+    <Compile Include="CoffeeShopEdit.cs" />
+    <Compile Include="CoffeeShopListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
