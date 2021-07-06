@@ -64,8 +64,13 @@
     <Compile Include="Migrations\202107021500137_CRUD.Designer.cs">
       <DependentUpon>202107021500137_CRUD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107061530340_Adding Rate Class.cs" />
+    <Compile Include="Migrations\202107061530340_Adding Rate Class.Designer.cs">
+      <DependentUpon>202107061530340_Adding Rate Class.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -77,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107021500137_CRUD.resx">
       <DependentUpon>202107021500137_CRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107061530340_Adding Rate Class.resx">
+      <DependentUpon>202107061530340_Adding Rate Class.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
