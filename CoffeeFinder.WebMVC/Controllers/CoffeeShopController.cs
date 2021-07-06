@@ -84,7 +84,8 @@ namespace CoffeeFinder.WebMVC.Controllers
                     IsParkingEasy = detail.IsParkingEasy,
                     IsDiningOutside = detail.IsDiningOutside,
                     IsDriveThru = detail.IsDriveThru,
-                    IsWifiAvailable = detail.IsWifiAvailable
+                    IsWifiAvailable = detail.IsWifiAvailable,
+                    Rate = detail.Rate
 
 
                 };
