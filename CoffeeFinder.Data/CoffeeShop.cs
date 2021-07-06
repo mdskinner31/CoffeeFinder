@@ -33,7 +33,7 @@ namespace CoffeeFinder.Data
 
         public virtual List<Rate> Rates { get; set; }
 
-        public double Rate
+        public double OverallRating
         {
             get
             {

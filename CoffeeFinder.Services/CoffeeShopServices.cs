@@ -30,8 +30,8 @@ namespace CoffeeFinder.Services
                     ZipCode = model.ZipCode,
                     Phone = model.Phone,
                     Website = model.Website,
-                   /* OverallRating = model.OverallRating,
-                   */ 
+                    
+                   
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -68,7 +68,7 @@ namespace CoffeeFinder.Services
                                     IsDiningOutside = e.IsDiningOutside,
                                     IsDriveThru = e.IsDriveThru,
                                     IsWifiAvailable = e.IsWifiAvailable,
-                                    Rate = e.Rate
+                                   // OverallRating = e.OverallRating
                                 }
                         );
 
@@ -101,7 +101,7 @@ namespace CoffeeFinder.Services
                         IsDiningOutside = entity.IsDiningOutside,
                         IsDriveThru = entity.IsDriveThru,
                         IsWifiAvailable = entity.IsWifiAvailable,
-                        Rate = entity.Rate
+                        
                     };
             }
         }

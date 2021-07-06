@@ -29,8 +29,11 @@
         <th>
             @Html.DisplayNameFor(model => model.IsRecommended)
         </th>
-        
-        
+        <th>
+            @Html.DisplayNameFor(model => model.OverallRating)
+        </th>
+
+
         <th></th>
     </tr>
 
@@ -54,7 +57,10 @@
     <td>
         @Html.DisplayFor(modelItem => item.IsRecommended)
     </td>
-    
+    <td>
+        @Html.DisplayFor(modelItem => item.OverallRating)
+    </td>
+
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
         @Html.ActionLink("Details", "Details", new { id = item.Id }) |
