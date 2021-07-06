@@ -33,6 +33,7 @@ namespace CoffeeFinder.Data
         }
 
         public DbSet<CoffeeShop> CoffeeShops { get; set; }
+        public DbSet<Rate> Rates { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
