@@ -51,6 +51,6 @@ namespace CoffeeFinder.Models
         [Display(Name = "Is WiFi available?")]
         public bool IsWifiAvailable { get; set; }
 
-        public double Rate { get; set; }
+        //public double Rate { get; set; }
     }
 }

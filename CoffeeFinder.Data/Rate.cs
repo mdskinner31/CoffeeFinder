@@ -12,9 +12,10 @@ namespace CoffeeFinder.Data
     {
         public int Id { get; set; }
 
-        [ForeignKey(nameof(CoffeeShop))]
+        //[ForeignKey(nameof(CoffeeShop))]
         public int CoffeeShopId { get; set; }
 
+        [ForeignKey("CoffeeShopId")]
         public virtual CoffeeShop CoffeeShop { get; set; }
 
         [Required,Range(0,10)]

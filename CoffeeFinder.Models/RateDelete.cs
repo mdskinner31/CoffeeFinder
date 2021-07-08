@@ -10,6 +10,8 @@ namespace CoffeeFinder.Models
     {
         public int Id { get; set; }
 
+        public int CoffeeShopId { get; set; }
+
         public double CustomerService { get; set; }
 
         public double CoffeeSelection { get; set; }

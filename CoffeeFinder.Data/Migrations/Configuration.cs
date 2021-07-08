@@ -10,7 +10,6 @@ namespace CoffeeFinder.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "CoffeeFinder.Data.ApplicationDbContext";
         }
 
         protected override void Seed(CoffeeFinder.Data.ApplicationDbContext context)

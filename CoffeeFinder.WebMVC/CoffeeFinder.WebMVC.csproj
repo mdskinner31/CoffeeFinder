@@ -171,6 +171,7 @@
     <Compile Include="Controllers\CoffeeShopController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RateController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,6 +241,8 @@
     <Content Include="Views\CoffeeShop\Details.cshtml" />
     <Content Include="Views\CoffeeShop\Edit.cshtml" />
     <Content Include="Views\CoffeeShop\Delete.cshtml" />
+    <Content Include="Views\Rate\Index.cshtml" />
+    <Content Include="Views\Rate\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

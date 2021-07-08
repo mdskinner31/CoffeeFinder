@@ -56,17 +56,13 @@
   <ItemGroup>
     <Compile Include="CoffeeShop.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202107021458348_InitialCreate.cs" />
-    <Compile Include="Migrations\202107021458348_InitialCreate.Designer.cs">
-      <DependentUpon>202107021458348_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202107072029010_Fixing Rate Table.cs" />
+    <Compile Include="Migrations\202107072029010_Fixing Rate Table.Designer.cs">
+      <DependentUpon>202107072029010_Fixing Rate Table.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107021500137_CRUD.cs" />
-    <Compile Include="Migrations\202107021500137_CRUD.Designer.cs">
-      <DependentUpon>202107021500137_CRUD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107061530340_Adding Rate Class.cs" />
-    <Compile Include="Migrations\202107061530340_Adding Rate Class.Designer.cs">
-      <DependentUpon>202107061530340_Adding Rate Class.cs</DependentUpon>
+    <Compile Include="Migrations\202107072034380_Fixing Rate Table.cs" />
+    <Compile Include="Migrations\202107072034380_Fixing Rate Table.Designer.cs">
+      <DependentUpon>202107072034380_Fixing Rate Table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,14 +73,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107021458348_InitialCreate.resx">
-      <DependentUpon>202107021458348_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107072029010_Fixing Rate Table.resx">
+      <DependentUpon>202107072029010_Fixing Rate Table.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107021500137_CRUD.resx">
-      <DependentUpon>202107021500137_CRUD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107061530340_Adding Rate Class.resx">
-      <DependentUpon>202107061530340_Adding Rate Class.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107072034380_Fixing Rate Table.resx">
+      <DependentUpon>202107072034380_Fixing Rate Table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

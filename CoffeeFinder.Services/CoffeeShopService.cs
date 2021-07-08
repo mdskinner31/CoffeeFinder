@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace CoffeeFinder.Services
 {
-    public class CoffeeShopServices
+    public class CoffeeShopService
     {
         private readonly Guid _userId;
 
-        public CoffeeShopServices(Guid userId)
+        public CoffeeShopService(Guid userId)
         {
             _userId = userId;
         }
@@ -30,8 +30,17 @@ namespace CoffeeFinder.Services
                     ZipCode = model.ZipCode,
                     Phone = model.Phone,
                     Website = model.Website,
-                    
                    
+                    StoreHours = model.StoreHours,
+                    IsFavorite = model.IsFavorite,
+                    IsRecommended = model.IsRecommended,
+                    IsParkingEasy = model.IsParkingEasy,
+                    IsDiningOutside = model.IsDiningOutside,
+                    IsDriveThru = model.IsDriveThru,
+                    IsWifiAvailable = model.IsWifiAvailable,
+
+
+
                 };
 
             using (var ctx = new ApplicationDbContext())
