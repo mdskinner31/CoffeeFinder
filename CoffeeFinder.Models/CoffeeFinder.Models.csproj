@@ -59,6 +59,11 @@
     <Compile Include="CoffeeShopDetail.cs" />
     <Compile Include="CoffeeShopEdit.cs" />
     <Compile Include="CoffeeShopListItem.cs" />
+    <Compile Include="MenuCreate.cs" />
+    <Compile Include="MenuDelete.cs" />
+    <Compile Include="MenuDetail.cs" />
+    <Compile Include="MenuEdit.cs" />
+    <Compile Include="MenuListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RateCreate.cs" />
     <Compile Include="RateDelete.cs" />

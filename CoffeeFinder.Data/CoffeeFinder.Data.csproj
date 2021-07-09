@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="CoffeeShop.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Migrations\202107081348515_fixing database.cs" />
     <Compile Include="Migrations\202107081348515_fixing database.Designer.cs">
       <DependentUpon>202107081348515_fixing database.cs</DependentUpon>
