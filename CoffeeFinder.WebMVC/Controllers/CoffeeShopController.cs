@@ -21,7 +21,7 @@ namespace CoffeeFinder.WebMVC.Controllers
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CoffeeShopServices(userId);
+            var service = new CoffeeShopService(userId);
            
             var model = service.GetCoffeeShops();
             
@@ -85,7 +85,7 @@ namespace CoffeeFinder.WebMVC.Controllers
                     IsDiningOutside = detail.IsDiningOutside,
                     IsDriveThru = detail.IsDriveThru,
                     IsWifiAvailable = detail.IsWifiAvailable,
-                    Rate = detail.Rate
+                    
 
 
                 };
@@ -139,10 +139,10 @@ namespace CoffeeFinder.WebMVC.Controllers
         //}
 
 
-        private CoffeeShopServices CreateCoffeeShopServices()
+        private CoffeeShopService CreateCoffeeShopServices()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CoffeeShopServices(userId);
+            var service = new CoffeeShopService(userId);
             return service;
         }
 

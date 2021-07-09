@@ -30,27 +30,28 @@ namespace CoffeeFinder.Data
         public string Phone { get; set; }
 
         public string Website { get; set; }
-
-        public virtual List<Rate> Rates { get; set; }
-
-        public double OverallRating
+         
+        
+        public virtual List<Rate> Rates { get; set; } = new List<Rate>();
+        
+        public double Rating
         {
             get
             {
-                double totalOverallRating = 0;
+                double totalAverageRating = 0;
 
-                foreach (var rates in Rates)
+                foreach (var rate in Rates)
                 {
-                    totalOverallRating += rates.OverallRating;
+                    totalAverageRating += rate.AverageRating;
                 }
 
                 return Rates.Count > 0
-                    ? Math.Round(totalOverallRating / Rates.Count, 2) : 0;
+                    ? Math.Round(totalAverageRating / Rates.Count, 2) : 0;
 
             }
         }
 
-       
+
 
         //public string MenuItemsId { get; set; }
 

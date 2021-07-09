@@ -7,13 +7,13 @@ namespace CoffeeFinder.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class CRUD : IMigrationMetadata
+    public sealed partial class ChangedOverallRatingtojustRating : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CRUD));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangedOverallRatingtojustRating));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107021500137_CRUD"; }
+            get { return "202107081557444_Changed OverallRating to just Rating"; }
         }
         
         string IMigrationMetadata.Source

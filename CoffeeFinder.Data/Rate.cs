@@ -12,9 +12,10 @@ namespace CoffeeFinder.Data
     {
         public int Id { get; set; }
 
-        [ForeignKey(nameof(CoffeeShop))]
+        //[ForeignKey(nameof(CoffeeShop))]
         public int CoffeeShopId { get; set; }
 
+        [ForeignKey("CoffeeShopId")]
         public virtual CoffeeShop CoffeeShop { get; set; }
 
         [Required,Range(0,10)]
@@ -29,12 +30,12 @@ namespace CoffeeFinder.Data
         [Required,Range(0, 10)]
         public double AvailableAmenities { get; set; }
 
-        public double OverallRating
+        public double AverageRating
         {
             get
             {
-                var totalScore = CustomerService + CoffeeSelection + Cleanliness + AvailableAmenities;
-                return totalScore / 4;
+                var totalAverageRating = CustomerService + CoffeeSelection + Cleanliness + AvailableAmenities;
+                return totalAverageRating / 4;
             }
         }
     }

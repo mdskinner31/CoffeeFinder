@@ -7,13 +7,13 @@ namespace CoffeeFinder.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class RateDetails : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RateDetails));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107021458348_InitialCreate"; }
+            get { return "202107081444265_Rate Details"; }
         }
         
         string IMigrationMetadata.Source
