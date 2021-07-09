@@ -44,12 +44,12 @@ namespace CoffeeFinder.WebMVC.Controllers
 
             if (service.CreateRate(model))
             {
-                TempData["SaveResult"] = "Your rate was created.";
+                TempData["SaveResult"] = "Your menu was created.";
                 return RedirectToAction("Index");
 
             };
 
-            ModelState.AddModelError("", "Rate could not be created.");
+            ModelState.AddModelError("", "Menu could not be created.");
 
             return View(model);
         }
@@ -71,7 +71,6 @@ namespace CoffeeFinder.WebMVC.Controllers
                 {
                     Id = detail.Id,
                     CoffeeShopId = detail.CoffeeShopId,
-                    
                     CustomerService = detail.CustomerService,
                     CoffeeSelection = detail.CoffeeSelection,
                     Cleanliness = detail.Cleanliness,
