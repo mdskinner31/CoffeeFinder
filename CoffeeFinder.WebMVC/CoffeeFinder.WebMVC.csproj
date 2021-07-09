@@ -243,6 +243,9 @@
     <Content Include="Views\CoffeeShop\Delete.cshtml" />
     <Content Include="Views\Rate\Index.cshtml" />
     <Content Include="Views\Rate\Create.cshtml" />
+    <Content Include="Views\Rate\Details.cshtml" />
+    <Content Include="Views\Rate\Edit.cshtml" />
+    <Content Include="Views\Rate\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

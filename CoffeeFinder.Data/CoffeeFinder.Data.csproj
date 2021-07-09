@@ -56,13 +56,33 @@
   <ItemGroup>
     <Compile Include="CoffeeShop.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202107072029010_Fixing Rate Table.cs" />
-    <Compile Include="Migrations\202107072029010_Fixing Rate Table.Designer.cs">
-      <DependentUpon>202107072029010_Fixing Rate Table.cs</DependentUpon>
+    <Compile Include="Migrations\202107081348515_fixing database.cs" />
+    <Compile Include="Migrations\202107081348515_fixing database.Designer.cs">
+      <DependentUpon>202107081348515_fixing database.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107072034380_Fixing Rate Table.cs" />
-    <Compile Include="Migrations\202107072034380_Fixing Rate Table.Designer.cs">
-      <DependentUpon>202107072034380_Fixing Rate Table.cs</DependentUpon>
+    <Compile Include="Migrations\202107081444265_Rate Details.cs" />
+    <Compile Include="Migrations\202107081444265_Rate Details.Designer.cs">
+      <DependentUpon>202107081444265_Rate Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107081557444_Changed OverallRating to just Rating.cs" />
+    <Compile Include="Migrations\202107081557444_Changed OverallRating to just Rating.Designer.cs">
+      <DependentUpon>202107081557444_Changed OverallRating to just Rating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107081745098_Correct DB.cs" />
+    <Compile Include="Migrations\202107081745098_Correct DB.Designer.cs">
+      <DependentUpon>202107081745098_Correct DB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107081822062_Changed CoffeShop N Rating.cs" />
+    <Compile Include="Migrations\202107081822062_Changed CoffeShop N Rating.Designer.cs">
+      <DependentUpon>202107081822062_Changed CoffeShop N Rating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107081852376_Added Display Headings.cs" />
+    <Compile Include="Migrations\202107081852376_Added Display Headings.Designer.cs">
+      <DependentUpon>202107081852376_Added Display Headings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107091426326_Overall Rating Fix.cs" />
+    <Compile Include="Migrations\202107091426326_Overall Rating Fix.Designer.cs">
+      <DependentUpon>202107091426326_Overall Rating Fix.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,11 +93,26 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107072029010_Fixing Rate Table.resx">
-      <DependentUpon>202107072029010_Fixing Rate Table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107081348515_fixing database.resx">
+      <DependentUpon>202107081348515_fixing database.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107072034380_Fixing Rate Table.resx">
-      <DependentUpon>202107072034380_Fixing Rate Table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107081444265_Rate Details.resx">
+      <DependentUpon>202107081444265_Rate Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107081557444_Changed OverallRating to just Rating.resx">
+      <DependentUpon>202107081557444_Changed OverallRating to just Rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107081745098_Correct DB.resx">
+      <DependentUpon>202107081745098_Correct DB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107081822062_Changed CoffeShop N Rating.resx">
+      <DependentUpon>202107081822062_Changed CoffeShop N Rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107081852376_Added Display Headings.resx">
+      <DependentUpon>202107081852376_Added Display Headings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107091426326_Overall Rating Fix.resx">
+      <DependentUpon>202107091426326_Overall Rating Fix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

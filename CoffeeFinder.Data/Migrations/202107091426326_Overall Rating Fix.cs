@@ -3,7 +3,7 @@ namespace CoffeeFinder.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class TableRateaddfix : DbMigration
+    public partial class OverallRatingFix : DbMigration
     {
         public override void Up()
         {

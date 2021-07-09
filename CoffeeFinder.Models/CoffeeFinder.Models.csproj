@@ -70,6 +70,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CoffeeFinder.Data\CoffeeFinder.Data.csproj">
+      <Project>{89AE9A1A-5BDD-4988-8642-5BC0EBEBACC9}</Project>
+      <Name>CoffeeFinder.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

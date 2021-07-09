@@ -15,25 +15,19 @@ namespace CoffeeFinder.WebMVC.Controllers
         // GET: Rate
         public ActionResult Index()
         {
+
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RateService(userId);
             var model = service.GetRates();
+
+
             return View(model);
         }
 
         public ActionResult Create()
         {
-            //ViewBag.Title = "New Rating";
 
-            //List<CoffeeShop> CoffeeShops = (new CoffeeShopService()).GetCoffeeShops().ToList();
-            //CoffeeShops.Select(c => new SelectListItem() { });
-            //var query = from c in CoffeeShops
-            //            select new SelectListItem()
-            //            {
-            //                Value = c.Id.ToString(),
-            //                Text = c.Name
-            //            };
-            //ViewBag.CoffeeShopId = query.ToList();
+            
 
             return View();
         }
@@ -44,7 +38,8 @@ namespace CoffeeFinder.WebMVC.Controllers
         {
             if (!ModelState.IsValid)
                 return View(model);
-            var userId = Guid.Parse(User.Identity.GetUserId());
+
+            //var userId = Guid.Parse(User.Identity.GetUserId());
             var service = CreateRateService();
 
             if (service.CreateRate(model))
@@ -59,27 +54,79 @@ namespace CoffeeFinder.WebMVC.Controllers
             return View(model);
         }
 
-        //public ActionResult Details(int id)
-        //{
-        //    var svc = CreateRateService();
-        //    var model = svc.GetRateById(id);
+        public ActionResult Details(int id)
+        {
+            var svc = CreateRateService();
+            var model = svc.GetRateById(id);
 
-        //    return View(model);
-        //}
+            return View(model);
+        }
 
-        //public ActionResult Edit(int id)
-        //{
-        //    var service = CreateRateService();
-        //    var detail = service.GetRateById(id);
-        //    var model =
-        //        new RateEdit
-        //        {
-        //            CoffeeShopId = detail.CoffeeShopId,
-        //            Name = detail.Name
-        //            Content = detail.Content
-        //        };
-        //    return View(model);
-        //}
+        public ActionResult Edit(int id)
+        {
+            var service = CreateRateService();
+            var detail = service.GetRateById(id);
+            var model =
+                new RateEdit
+                {
+                    Id = detail.Id,
+                    CoffeeShopId = detail.CoffeeShopId,
+                    
+                    CustomerService = detail.CustomerService,
+                    CoffeeSelection = detail.CoffeeSelection,
+                    Cleanliness = detail.Cleanliness,
+                    AvailableAmenities = detail.AvailableAmenities
+        };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, RateEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.Id != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateRateService();
+
+            if (service.UpdateRate(model))
+            {
+                TempData["SaveResult"] = "Your Rate was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your Rate could not be updated.");
+            return View();
+        }
+
+
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+           var svc = CreateRateService();
+            var model = svc.GetRateById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateRateService();
+
+            service.DeleteRate(id);
+
+            TempData["SaveResult"] = "Your ratings have been deleted.";
+
+            return RedirectToAction("Index");
+        }
 
         private RateService CreateRateService()
         {

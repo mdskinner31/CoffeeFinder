@@ -16,14 +16,14 @@
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
-        @Html.LabelFor(model => model.CoffeeShopId, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.CoffeeShopId,"Coffee Shop", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.CoffeeShopId, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.CoffeeShopId, "", new { @class = "text-danger" })
         </div>
     </div>
 
-    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" }) 
     <div class="form-group">
         @Html.LabelFor(model => model.CoffeeShopId, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -34,7 +34,7 @@
 
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
-        @Html.LabelFor(model => model.CustomerService, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.CustomerService, "Customer Service", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.CustomerService, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.CustomerService, "", new { @class = "text-danger" })
@@ -42,7 +42,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.CoffeeSelection, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.CoffeeSelection,"Coffee Selection", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.CoffeeSelection, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.CoffeeSelection, "", new { @class = "text-danger" })
@@ -50,7 +50,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Cleanliness, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Cleanliness, "Cleanliness", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Cleanliness, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Cleanliness, "", new { @class = "text-danger" })
@@ -58,7 +58,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.AvailableAmenities, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.AvailableAmenities, "Available Amenities", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.AvailableAmenities, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.AvailableAmenities, "", new { @class = "text-danger" })
@@ -66,10 +66,10 @@
     </div>
 
     @*<div class="form-group">
-            @Html.LabelFor(model => model.OverallRating, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Rating, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.OverallRating, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.OverallRating, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Rating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Rating, "", new { @class = "text-danger" })
             </div>
         </div>*@
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CoffeeFinder.Models
 {
     public class RateDelete
@@ -20,6 +21,15 @@ namespace CoffeeFinder.Models
 
         public double AvailableAmenities { get; set; }
 
-        public double OverallRating { get; set; }
+        public double AverageRating //{ get; set; }
+        {
+            get
+            {
+                var totalAverageRating = CustomerService + CoffeeSelection + Cleanliness + AvailableAmenities;
+                return totalAverageRating / 4;
+            }
+}
+
+
     }
 }

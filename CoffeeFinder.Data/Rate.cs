@@ -30,12 +30,12 @@ namespace CoffeeFinder.Data
         [Required,Range(0, 10)]
         public double AvailableAmenities { get; set; }
 
-        public double OverallRating
+        public double AverageRating
         {
             get
             {
-                var totalScore = CustomerService + CoffeeSelection + Cleanliness + AvailableAmenities;
-                return totalScore / 4;
+                var totalAverageRating = CustomerService + CoffeeSelection + Cleanliness + AvailableAmenities;
+                return totalAverageRating / 4;
             }
         }
     }

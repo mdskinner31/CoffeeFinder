@@ -11,6 +11,7 @@ namespace CoffeeFinder.Services
    public class RateService
     {
         private readonly Guid _userId;
+
         public RateService(Guid userId)
         {
             _userId = userId;
@@ -27,7 +28,7 @@ namespace CoffeeFinder.Services
                 CoffeeSelection = model.CoffeeSelection,
                 Cleanliness = model.Cleanliness,
                 AvailableAmenities = model.AvailableAmenities,
-                //OverallRating = model.OverallRating
+                
 
             };
              using (var ctx = new ApplicationDbContext())
@@ -42,7 +43,7 @@ namespace CoffeeFinder.Services
             {
                 var query = ctx
                     .Rates
-                    .Where(e => e.Id == e.CoffeeShopId )
+                    .Where(e => e.Id == e.Id)
                     .Select(
                         e =>
                         new RateListItem
@@ -53,12 +54,36 @@ namespace CoffeeFinder.Services
                             CoffeeSelection = e.CoffeeSelection,
                             Cleanliness = e.Cleanliness,
                             AvailableAmenities = e.AvailableAmenities,
+                            //Rating = e.Rating,
                         }
                         );
                 return query.ToArray();
             }
         }
+
+        
         //READ
+        public RateDetail GetRateById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                 ctx
+                  .Rates
+                  .Single(e => e.Id == id && e.Id == id);
+                return
+                    new RateDetail
+                    {
+                        Id = entity.Id,
+                        CoffeeShopId = entity.CoffeeShopId,
+                        CustomerService = entity.CustomerService,
+                        CoffeeSelection = entity.CoffeeSelection,
+                        Cleanliness = entity.Cleanliness,
+                        AvailableAmenities = entity.AvailableAmenities,
+                        
+                    };
+            }
+        }
 
 
         //UPDATE
@@ -68,8 +93,8 @@ namespace CoffeeFinder.Services
             {
                 var entity = ctx
                     .Rates
-                    .Single(e => e.Id == model.Id);
-                //&& e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.Id == model.Id
+                && e.CoffeeShopId == model.CoffeeShopId);
 
                 entity.Id = model.Id;
                 entity.CoffeeShopId = model.CoffeeShopId;
@@ -82,19 +107,20 @@ namespace CoffeeFinder.Services
             }
         }
         //DELETE
-        //public bool DeleteRate(int id)
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var entity =
-        //            ctx
-        //                .Rates
-        //                .Single(e => e.Id == Id && Id = e.CoffeeShopIdId);
+        public bool DeleteRate(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Rates
+                        .Single(e => e.Id == id && //e.Id == _userId);
+                        e.CoffeeShopId == e.CoffeeShopId);
 
-        //        ctx.Rates.Remove(entity);
+                ctx.Rates.Remove(entity);
 
-        //        return ctx.SaveChanges() == 1;
-        //    }
-        //}
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

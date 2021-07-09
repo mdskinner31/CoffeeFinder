@@ -1,0 +1,66 @@
+﻿@model CoffeeFinder.Models.RateDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RateDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CoffeeShopId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoffeeShopId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerService)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoffeeSelection)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoffeeSelection)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cleanliness)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cleanliness)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AvailableAmenities)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvailableAmenities)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AverageRating)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

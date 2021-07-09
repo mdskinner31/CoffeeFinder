@@ -27,8 +27,10 @@
             @Html.DisplayNameFor(model => model.AvailableAmenities)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OverallRating)
+            @Html.DisplayNameFor(model => model.AverageRating)
         </th>
+
+
         <th></th>
     </tr>
 
@@ -50,7 +52,7 @@
         @Html.DisplayFor(modelItem => item.AvailableAmenities)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.OverallRating)
+        @Html.DisplayFor(modelItem => item.AverageRating)
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

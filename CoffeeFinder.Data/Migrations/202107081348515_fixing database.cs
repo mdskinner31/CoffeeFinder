@@ -3,7 +3,7 @@ namespace CoffeeFinder.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class fixingdatabase : DbMigration
     {
         public override void Up()
         {
@@ -20,6 +20,7 @@ namespace CoffeeFinder.Data.Migrations
                         ZipCode = c.String(),
                         Phone = c.String(),
                         Website = c.String(),
+                        OverallRating = c.Double(nullable: false),
                         StoreHours = c.String(),
                         IsFavorite = c.Boolean(nullable: false),
                         IsRecommended = c.Boolean(nullable: false),
@@ -29,6 +30,21 @@ namespace CoffeeFinder.Data.Migrations
                         IsWifiAvailable = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Rate",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        CoffeeShopId = c.Int(nullable: false),
+                        CustomerService = c.Double(nullable: false),
+                        CoffeeSelection = c.Double(nullable: false),
+                        Cleanliness = c.Double(nullable: false),
+                        AvailableAmenities = c.Double(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.CoffeeShop", t => t.CoffeeShopId, cascadeDelete: true)
+                .Index(t => t.CoffeeShopId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -108,15 +124,18 @@ namespace CoffeeFinder.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Rate", "CoffeeShopId", "dbo.CoffeeShop");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Rate", new[] { "CoffeeShopId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Rate");
             DropTable("dbo.CoffeeShop");
         }
     }

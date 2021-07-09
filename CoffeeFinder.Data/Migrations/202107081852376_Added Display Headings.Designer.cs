@@ -7,13 +7,13 @@ namespace CoffeeFinder.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class ResetForeignKEy : IMigrationMetadata
+    public sealed partial class AddedDisplayHeadings : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ResetForeignKEy));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedDisplayHeadings));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107071957039_Reset Foreign KEy"; }
+            get { return "202107081852376_Added Display Headings"; }
         }
         
         string IMigrationMetadata.Source

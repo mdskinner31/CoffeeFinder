@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeeFinder.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -53,7 +54,25 @@ namespace CoffeeFinder.Models
         [Display(Name = "Is WiFi available?")]
         public bool IsWifiAvailable { get; set; }
 
-        public double OverallRating { get; set; }
+
+        public virtual List<Rate> Rates { get; set; } = new List<Rate>();
+        [Display(Name = "Overall Rating")]
+        public double Rating
+        {
+            get
+            {
+                double totalAverageRating = 0;
+
+                foreach (var rate in Rates)
+                {
+                    totalAverageRating += rate.AverageRating;
+                }
+
+                return Rates.Count > 0
+                    ? Math.Round(totalAverageRating / Rates.Count, 2) : 0;
+            }
+        }
+
 
     }
 }

@@ -20,6 +20,6 @@ namespace CoffeeFinder.Models
 
         public double AvailableAmenities { get; set; }
 
-        public double OverallRating { get; set; }
+        
     }
 }

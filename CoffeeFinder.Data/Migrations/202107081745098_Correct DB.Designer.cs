@@ -7,13 +7,13 @@ namespace CoffeeFinder.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class AddingTableRatewithFK : IMigrationMetadata
+    public sealed partial class CorrectDB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddingTableRatewithFK));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CorrectDB));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107072004476_Adding Table Rate with FK"; }
+            get { return "202107081745098_Correct DB"; }
         }
         
         string IMigrationMetadata.Source

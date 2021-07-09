@@ -7,13 +7,13 @@ namespace CoffeeFinder.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class FixingRateTable : IMigrationMetadata
+    public sealed partial class ChangedCoffeShopNRating : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FixingRateTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangedCoffeShopNRating));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107072029010_Fixing Rate Table"; }
+            get { return "202107081822062_Changed CoffeShop N Rating"; }
         }
         
         string IMigrationMetadata.Source

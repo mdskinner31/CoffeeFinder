@@ -15,7 +15,7 @@ namespace CoffeeFinder.WebMVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "You shouldn't be here!!!";
 
             return View();
         }

@@ -38,9 +38,7 @@ namespace CoffeeFinder.Services
                     IsDiningOutside = model.IsDiningOutside,
                     IsDriveThru = model.IsDriveThru,
                     IsWifiAvailable = model.IsWifiAvailable,
-
-
-
+                   
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -50,6 +48,14 @@ namespace CoffeeFinder.Services
             }
         }
         
+        //public IEnumerable<CoffeeShop> GetCoffeeShops()
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        return ctx.CoffeeShops.ToList();
+        //    }
+        //}
+
         public IEnumerable<CoffeeShopListItem> GetCoffeeShops()
         {
             using (var ctx = new ApplicationDbContext())
@@ -77,7 +83,9 @@ namespace CoffeeFinder.Services
                                     IsDiningOutside = e.IsDiningOutside,
                                     IsDriveThru = e.IsDriveThru,
                                     IsWifiAvailable = e.IsWifiAvailable,
-                                   // OverallRating = e.OverallRating
+                                    
+                                    
+
                                 }
                         );
 
@@ -110,7 +118,7 @@ namespace CoffeeFinder.Services
                         IsDiningOutside = entity.IsDiningOutside,
                         IsDriveThru = entity.IsDriveThru,
                         IsWifiAvailable = entity.IsWifiAvailable,
-                        
+                        //Rating = entity.Rating
                     };
             }
         }
@@ -139,6 +147,7 @@ namespace CoffeeFinder.Services
                         entity.IsDiningOutside = model.IsDiningOutside;
                         entity.IsDriveThru = model.IsDriveThru;
                         entity.IsWifiAvailable = model.IsWifiAvailable;
+                
                         
 
 
