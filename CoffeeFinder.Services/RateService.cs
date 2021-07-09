@@ -23,7 +23,6 @@ namespace CoffeeFinder.Services
             {
                 Id = model.Id,
                 CoffeeShopId = model.CoffeeShopId,
-               
                 CustomerService = model.CustomerService,
                 CoffeeSelection = model.CoffeeSelection,
                 Cleanliness = model.Cleanliness,

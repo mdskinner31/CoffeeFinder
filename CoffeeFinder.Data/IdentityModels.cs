@@ -34,6 +34,7 @@ namespace CoffeeFinder.Data
 
         public DbSet<CoffeeShop> CoffeeShops { get; set; }
         public DbSet<Rate> Rates { get; set; }
+        public DbSet<Menu> Menus { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
