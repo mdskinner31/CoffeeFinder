@@ -19,15 +19,24 @@ namespace CoffeeFinder.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RateService(userId);
             var model = service.GetRates();
-
-
             return View(model);
+
+            //return View(CreateRateService().GetRates());
         }
 
         public ActionResult Create()
         {
+            ViewBag.Title = "New Rating";
 
-            
+            //List<CoffeeShop> CoffeeShops = (new CoffeeShopService()).GetCoffeeShops().ToList();
+            //// CoffeeShops.Select(c => new SelectListItem() { });
+            //var SelectList = from c in CoffeeShops
+            //             select new SelectListItem()
+            //             {
+            //                 Value = c.Id.ToString(),
+            //                 Text = c.Name
+            //             };
+            //ViewBag.CoffeeShopId = 
 
             return View();
         }
@@ -39,17 +48,17 @@ namespace CoffeeFinder.WebMVC.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            //var userId = Guid.Parse(User.Identity.GetUserId());
+           // var userId = Guid.Parse(User.Identity.GetUserId());
             var service = CreateRateService();
 
             if (service.CreateRate(model))
             {
-                TempData["SaveResult"] = "Your menu was created.";
+                TempData["SaveResult"] = "Your rate was created.";
                 return RedirectToAction("Index");
 
             };
 
-            ModelState.AddModelError("", "Menu could not be created.");
+            ModelState.AddModelError("", "Rate could not be created.");
 
             return View(model);
         }
@@ -122,16 +131,16 @@ namespace CoffeeFinder.WebMVC.Controllers
 
             service.DeleteRate(id);
 
-            TempData["SaveResult"] = "Your ratings have been deleted.";
+            TempData["SaveResult"] = "Your rating was deleted.";
 
             return RedirectToAction("Index");
         }
-
         private RateService CreateRateService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RateService(userId);
             return service;
         }
+
     }
 }

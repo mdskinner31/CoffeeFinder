@@ -9,32 +9,107 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Coffee Finder", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
-                    <li>@Html.ActionLink("Coffee Shops", "Index", "CoffeeShop")</li>
-                   
-                    @if (User.Identity.IsAuthenticated)
-        {
-             @*<li>@Html.ActionLink("Coffee Shops", "Index", "CoffeeShop")</li>*@
-             <li>@Html.ActionLink("Rate a Coffee Shop", "Index", "Rate")</li>
-        }
-                    <li>@Html.ActionLink("Find a Coffee Shop", "About", "Home")</li>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand{-sm|-md|-lg|-xl} navbar-light bg-light">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Navbar brand -->
+                <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                    @*<img src="https://www.seekpng.com/png/detail/24-246077_free-vector-cup-of-coffee-clip-art-small.png" alt="Free Vector Cup Of Coffee Clip Art - Small Cup Of Coffee@seekpng.com"
+                         height="15"
+                         loading="lazy" />*@
+                </a>
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li>
+                        @Html.ActionLink("Coffee Shops", "Index", "CoffeeShop")
+                </li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    
+                    <li>@Html.ActionLink("Rate a Coffee Shop", "Index", "Rate")</li>
+                }
+                <li>@Html.ActionLink("Find a Coffee Shop", "About", "Home")</li>
+                <li>@Html.ActionLink("See the Menu", "Index", "Menu")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                <!-- Left links -->
             </div>
+            <!-- Collapsible wrapper -->
+            <!-- Right elements -->
+            <div class="d-flex align-items-center">
+                <!-- Icon -->
+                <a class="text-reset me-3" href="#">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+
+                <!-- Notifications -->
+                @*<a class="text-reset me-3 dropdown-toggle hidden-arrow"
+                   href="#"
+                   id="navbarDropdownMenuLink"
+                   role="button"
+                   data-mdb-toggle="dropdown"
+                   aria-expanded="false">*@
+                    <i class="fas fa-bell"></i>
+                    @*<span class="badge rounded-pill badge-notification bg-danger">1</span>*@
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="navbarDropdownMenuLink">
+                    <li>
+                        <a class="dropdown-item" href="#">Some news</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Another news</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                </ul>
+
+                <!-- Avatar -->
+                <a class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                   href="#"
+                   id="navbarDropdownMenuLink"
+                   role="button"
+                   data-mdb-toggle="dropdown"
+                   aria-expanded="false">
+                    @*<img src="https://mdbootstrap.com/img/new/avatars/3.jpg"
+                         class="rounded-circle"
+                         height="25"
+                         alt=""
+                         loading="lazy" />*@
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="navbarDropdownMenuLink">
+                    <li>
+                        <a class="dropdown-item" href="#">My profile</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Settings</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Right elements -->
         </div>
-    </div>
+        <!-- Container wrapper -->
+    </nav>
+  
     <div class="container body-content">
         @RenderBody()
         <hr />

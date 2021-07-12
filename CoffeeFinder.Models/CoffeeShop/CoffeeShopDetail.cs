@@ -12,6 +12,8 @@ namespace CoffeeFinder.Models
     {
         public int Id { get; set; }
 
+        //public Guid OwnerId{ get; set; }
+
         public string Name { get; set; }
 
         [Display(Name = "Street Address")]
@@ -66,7 +68,7 @@ namespace CoffeeFinder.Models
 
                 foreach (var rate in Rates)
                 {
-                    totalAverageRating += rate.AverageRating;
+                    totalAverageRating += rate.Rating;
                 }
 
                 return Rates.Count > 0

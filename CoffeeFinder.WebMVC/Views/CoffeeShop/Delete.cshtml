@@ -1,4 +1,5 @@
 ﻿@model CoffeeFinder.Models.CoffeeShopDelete
+@*@model CoffeeFinder.Models.CoffeeShopDetails*@// This will temp fix the dictionary prob with No Delete.//
 
 @{
     ViewBag.Title = "Delete";
@@ -133,7 +134,8 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">

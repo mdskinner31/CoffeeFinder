@@ -85,6 +85,38 @@
     <Compile Include="Migrations\202107091426326_Overall Rating Fix.Designer.cs">
       <DependentUpon>202107091426326_Overall Rating Fix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107101402353_Adding in Menu class.cs" />
+    <Compile Include="Migrations\202107101402353_Adding in Menu class.Designer.cs">
+      <DependentUpon>202107101402353_Adding in Menu class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107101424130_Fixing Rate and updating Menu class.cs" />
+    <Compile Include="Migrations\202107101424130_Fixing Rate and updating Menu class.Designer.cs">
+      <DependentUpon>202107101424130_Fixing Rate and updating Menu class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107102045299_Fixing RateDelete.cs" />
+    <Compile Include="Migrations\202107102045299_Fixing RateDelete.Designer.cs">
+      <DependentUpon>202107102045299_Fixing RateDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107102233279_Fixing Menu Class.cs" />
+    <Compile Include="Migrations\202107102233279_Fixing Menu Class.Designer.cs">
+      <DependentUpon>202107102233279_Fixing Menu Class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107102236201_Fixing Menu Class2.cs" />
+    <Compile Include="Migrations\202107102236201_Fixing Menu Class2.Designer.cs">
+      <DependentUpon>202107102236201_Fixing Menu Class2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107112114217_Switching Select List Dropdown.cs" />
+    <Compile Include="Migrations\202107112114217_Switching Select List Dropdown.Designer.cs">
+      <DependentUpon>202107112114217_Switching Select List Dropdown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107121316126_Fixing Menu Controllers Index.cs" />
+    <Compile Include="Migrations\202107121316126_Fixing Menu Controllers Index.Designer.cs">
+      <DependentUpon>202107121316126_Fixing Menu Controllers Index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107121322382_Fixing Menu Controllers Index again.cs" />
+    <Compile Include="Migrations\202107121322382_Fixing Menu Controllers Index again.Designer.cs">
+      <DependentUpon>202107121322382_Fixing Menu Controllers Index again.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rate.cs" />
@@ -114,6 +146,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107091426326_Overall Rating Fix.resx">
       <DependentUpon>202107091426326_Overall Rating Fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107101402353_Adding in Menu class.resx">
+      <DependentUpon>202107101402353_Adding in Menu class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107101424130_Fixing Rate and updating Menu class.resx">
+      <DependentUpon>202107101424130_Fixing Rate and updating Menu class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107102045299_Fixing RateDelete.resx">
+      <DependentUpon>202107102045299_Fixing RateDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107102233279_Fixing Menu Class.resx">
+      <DependentUpon>202107102233279_Fixing Menu Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107102236201_Fixing Menu Class2.resx">
+      <DependentUpon>202107102236201_Fixing Menu Class2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107112114217_Switching Select List Dropdown.resx">
+      <DependentUpon>202107112114217_Switching Select List Dropdown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107121316126_Fixing Menu Controllers Index.resx">
+      <DependentUpon>202107121316126_Fixing Menu Controllers Index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107121322382_Fixing Menu Controllers Index again.resx">
+      <DependentUpon>202107121322382_Fixing Menu Controllers Index again.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

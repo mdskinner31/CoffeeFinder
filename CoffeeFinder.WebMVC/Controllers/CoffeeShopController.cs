@@ -15,18 +15,18 @@ namespace CoffeeFinder.WebMVC.Controllers
     [Authorize]
     public class CoffeeShopController : Controller
     {
-        
-        //private ApplicationDbContext _db = new ApplicationDbContext();
-        // GET: CoffeeShop
+
+
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CoffeeShopService(userId);
-           
             var model = service.GetCoffeeShops();
-            
+
             return View(model);
         }
+
+        
 
         public ActionResult Create()
         {
@@ -41,7 +41,7 @@ namespace CoffeeFinder.WebMVC.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            var service = CreateCoffeeShopServices();
+            var service = CreateCoffeeShopService();
 
             if (service.CreateCoffeeShop(model))
             {
@@ -57,7 +57,7 @@ namespace CoffeeFinder.WebMVC.Controllers
 
         public ActionResult Details(int id)
         {
-            var svc = CreateCoffeeShopServices();
+            var svc = CreateCoffeeShopService();
             var model = svc.GetCoffeeShopById(id);
 
             return View(model);
@@ -65,7 +65,7 @@ namespace CoffeeFinder.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
-            var service = CreateCoffeeShopServices();
+            var service = CreateCoffeeShopService();
             var detail = service.GetCoffeeShopById(id);
             var model =
                 new CoffeeShopEdit
@@ -103,7 +103,7 @@ namespace CoffeeFinder.WebMVC.Controllers
                 return View(model);
             }
 
-            var service = CreateCoffeeShopServices();
+            var service = CreateCoffeeShopService();
 
             if (service.UpdateCoffeeShop(model))
             {
@@ -115,41 +115,12 @@ namespace CoffeeFinder.WebMVC.Controllers
             return View(model);
         }
 
-        //[ActionName("Delete")]
-        //public ActionResult Delete(int id)
-        //{
-        //    var svc = CreateCoffeeShopServices();
-        //    var model = svc.GetCoffeeShopById(id);
-
-        //    return View(model);
-        //}
-
-        //[HttpPost]
-        //[ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeletePost(int id)
-        //{
-        //    var service = CreateCoffeeShopServices();
-
-        //    service.DeleteCoffeeShop(id);
-
-        //    TempData["SaveResult"] = "Your Coffee Shop was deleted";
-
-        //    return RedirectToAction("Index");
-        //}
-
-
-        private CoffeeShopService CreateCoffeeShopServices()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CoffeeShopService(userId);
-            return service;
-        }
+        
 
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
-            var svc = CreateCoffeeShopServices();
+            var svc = CreateCoffeeShopService();
             var model = svc.GetCoffeeShopById(id);
 
             return View(model);
@@ -160,84 +131,21 @@ namespace CoffeeFinder.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeletePost(int id)
         {
-            var service = CreateCoffeeShopServices();
+            var service = CreateCoffeeShopService();
 
             service.DeleteCoffeeShop(id);
 
-            TempData["SaveResult"] = "Your Coffee Shop was deleted";
+            TempData["SaveResult"] = "Your coffee shop was deleted";
 
             return RedirectToAction("Index");
         }
 
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
-        //    }
-        //    CoffeeShop coffeeshop = _db.CoffeeShops.Find(id);
-        //    if (coffeeshop == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(coffeeshop);
-        //}
-
-
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Delete(int id)
-        //{
-        //    CoffeeShop coffeeshop = _db.CoffeeShops.Find(id);
-        //    _db.CoffeeShops.Remove(coffeeshop);
-        //    _db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
-
-
-
-        //public ActionResult Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    CoffeeShop coffeeshop = _db.CoffeeShops.Find(id);
-        //    if (coffeeshop == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(coffeeshop);
-        //}
-
-        //// POST : Edit
-        //// CoffeeShop/Edit/{id}
-        //[HttpPost, ActionName("Edit")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit(CoffeeShop coffeeshop)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _db.Entry(coffeeshop).State = EntityState.Modified;
-        //        _db.SaveChanges(); return RedirectToAction("Index");
-        //    }
-        //    return View(coffeeshop);
-        //}
-
-        //// GET : Details
-        //// CoffeeShop/Details/{id}
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    CoffeeShop coffeeshop = _db.CoffeeShops.Find(id);
-        //    if (coffeeshop == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(coffeeshop);
-        //}
+        private CoffeeShopService CreateCoffeeShopService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CoffeeShopService(userId);
+            return service;
+        }
+        
     }
     }

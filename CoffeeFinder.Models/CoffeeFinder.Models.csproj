@@ -54,22 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoffeeShopCreate.cs" />
-    <Compile Include="CoffeeShopDelete.cs" />
-    <Compile Include="CoffeeShopDetail.cs" />
-    <Compile Include="CoffeeShopEdit.cs" />
-    <Compile Include="CoffeeShopListItem.cs" />
-    <Compile Include="MenuCreate.cs" />
-    <Compile Include="MenuDelete.cs" />
-    <Compile Include="MenuDetail.cs" />
-    <Compile Include="MenuEdit.cs" />
-    <Compile Include="MenuListItem.cs" />
+    <Compile Include="CoffeeShop\CoffeeShopCreate.cs" />
+    <Compile Include="CoffeeShop\CoffeeShopDelete.cs" />
+    <Compile Include="CoffeeShop\CoffeeShopDetail.cs" />
+    <Compile Include="CoffeeShop\CoffeeShopEdit.cs" />
+    <Compile Include="CoffeeShop\CoffeeShopListItem.cs" />
+    <Compile Include="Menu\MenuCreate.cs" />
+    <Compile Include="Menu\MenuDelete.cs" />
+    <Compile Include="Menu\MenuDetail.cs" />
+    <Compile Include="Menu\MenuEdit.cs" />
+    <Compile Include="Menu\MenuListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RateCreate.cs" />
-    <Compile Include="RateDelete.cs" />
-    <Compile Include="RateDetail.cs" />
-    <Compile Include="RateEdit.cs" />
-    <Compile Include="RateListItem.cs" />
+    <Compile Include="Rate\RateCreate.cs" />
+    <Compile Include="Rate\RateDelete.cs" />
+    <Compile Include="Rate\RateDetail.cs" />
+    <Compile Include="Rate\RateEdit.cs" />
+    <Compile Include="Rate\RateListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -81,5 +81,6 @@
       <Name>CoffeeFinder.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

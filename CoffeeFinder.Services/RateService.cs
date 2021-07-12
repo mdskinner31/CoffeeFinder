@@ -21,6 +21,7 @@ namespace CoffeeFinder.Services
         {
             var entity = new Rate()
             {
+                OwnerId = _userId,
                 Id = model.Id,
                 CoffeeShopId = model.CoffeeShopId,
                 CustomerService = model.CustomerService,
@@ -53,7 +54,7 @@ namespace CoffeeFinder.Services
                             CoffeeSelection = e.CoffeeSelection,
                             Cleanliness = e.Cleanliness,
                             AvailableAmenities = e.AvailableAmenities,
-                            //Rating = e.Rating,
+                            
                         }
                         );
                 return query.ToArray();
@@ -69,7 +70,8 @@ namespace CoffeeFinder.Services
                 var entity =
                  ctx
                   .Rates
-                  .Single(e => e.Id == id && e.Id == id);
+                // .Single(e => e.Id == id && e.OwnerId == _userId);
+                  .Single(e => e.Id == id && e.CoffeeShopId == e.CoffeeShopId);
                 return
                     new RateDetail
                     {
@@ -92,8 +94,9 @@ namespace CoffeeFinder.Services
             {
                 var entity = ctx
                     .Rates
-                    .SingleOrDefault(e => e.Id == model.Id
-                && e.CoffeeShopId == model.CoffeeShopId);
+                    //.Single(e => e.Id == e.Id && e.Id == e.Id);
+                    .Single(e => e.Id == model.Id && e.CoffeeShopId == e.CoffeeShopId);
+                    //.Single(e => e.Id == model.Id  && e.OwnerId == _userId);
 
                 entity.Id = model.Id;
                 entity.CoffeeShopId = model.CoffeeShopId;
@@ -113,8 +116,10 @@ namespace CoffeeFinder.Services
                 var entity =
                     ctx
                         .Rates
-                        .Single(e => e.Id == id && //e.Id == _userId);
-                        e.CoffeeShopId == e.CoffeeShopId);
+                        .Single(e => e.Id == id && e.Id == e.Id);
+                       // .Single(e => e.Id == id && e.CoffeeShopId == e.CoffeeShopId);
+                       // .Single(e => e.Id == id && e.OwnerId == _userId);
+                        
 
                 ctx.Rates.Remove(entity);
 

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace CoffeeFinder.Models
 {
-    public class MenuDetail
+    public class MenuCreate
     {
         public int Id { get; set; }
+
+        public int CoffeeShopId { get; set; }
 
         public string Name { get; set; }
 

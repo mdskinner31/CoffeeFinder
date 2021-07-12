@@ -10,7 +10,7 @@ namespace CoffeeFinder.Models
 {
     public class CoffeeShopCreate
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
         [Required]
         public string Name { get; set; }
 
@@ -64,7 +64,7 @@ namespace CoffeeFinder.Models
 
                 foreach (var rate in Rates)
                 {
-                    totalAverageRating += rate.AverageRating;
+                    totalAverageRating += rate.Rating;
                 }
 
                 return Rates.Count > 0

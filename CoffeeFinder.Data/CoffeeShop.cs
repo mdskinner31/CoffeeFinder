@@ -42,7 +42,7 @@ namespace CoffeeFinder.Data
 
                 foreach (var rate in Rates)
                 {
-                    totalAverageRating += rate.AverageRating;
+                    totalAverageRating += rate.Rating;
                 }
 
                 return Rates.Count > 0

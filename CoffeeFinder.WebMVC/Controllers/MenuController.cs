@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CoffeeFinder.Models;
+using CoffeeFinder.Services;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,13 +14,20 @@ namespace CoffeeFinder.WebMVC.Controllers
         // GET: Menu
         public ActionResult Index()
         {
-            return View();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new MenuService(userId);
+
+            var model = service.GetMenus();
+
+            return View(model);
+            
         }
 
         public ActionResult Create()
         {
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(MenuCreate model)
@@ -29,7 +39,7 @@ namespace CoffeeFinder.WebMVC.Controllers
 
             if (service.CreateMenu(model))
             {
-                TempData["SaveResult"] = "Your rate was created.";
+                TempData["SaveResult"] = "Your menu was created.";
                 return RedirectToAction("Index");
 
             };
@@ -50,7 +60,7 @@ namespace CoffeeFinder.WebMVC.Controllers
         public ActionResult Edit(int id)
         {
             var service = CreateMenuService();
-            var detail = service.GetByMenuId(id);
+            var detail = service.GetMenuById(id);
             var model =
                 new MenuEdit
                 {
@@ -107,7 +117,7 @@ namespace CoffeeFinder.WebMVC.Controllers
 
             service.DeleteMenu(id);
 
-            TempData["SaveResult"] = "Your menu has been deleted.";
+            TempData["SaveResult"] = "Your menu was deleted.";
 
             return RedirectToAction("Index");
         }

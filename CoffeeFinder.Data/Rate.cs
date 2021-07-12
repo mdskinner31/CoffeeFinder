@@ -11,6 +11,7 @@ namespace CoffeeFinder.Data
     public class Rate
     {
         public int Id { get; set; }
+        public Guid OwnerId { get; set; }
 
         //[ForeignKey(nameof(CoffeeShop))]
         public int CoffeeShopId { get; set; }
@@ -30,7 +31,7 @@ namespace CoffeeFinder.Data
         [Required,Range(0, 10)]
         public double AvailableAmenities { get; set; }
 
-        public double AverageRating
+        public double Rating
         {
             get
             {

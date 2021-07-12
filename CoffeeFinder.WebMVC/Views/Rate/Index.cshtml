@@ -9,11 +9,23 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+        @ViewBag.SaveResult
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CoffeeShopId)
         </th>
+        
         <th>
             @Html.DisplayNameFor(model => model.CustomerService)
         </th>
@@ -27,18 +39,20 @@
             @Html.DisplayNameFor(model => model.AvailableAmenities)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AverageRating)
+            @Html.DisplayNameFor(model => model.Rating)
         </th>
 
 
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
 <tr>
     <td>
         @Html.DisplayFor(modelItem => item.CoffeeShopId)
     </td>
+   
     <td>
         @Html.DisplayFor(modelItem => item.CustomerService)
     </td>
@@ -52,7 +66,7 @@
         @Html.DisplayFor(modelItem => item.AvailableAmenities)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.AverageRating)
+        @Html.DisplayFor(modelItem => item.Rating)
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
@@ -60,6 +74,6 @@
         @Html.ActionLink("Delete", "Delete", new { id = item.Id })
     </td>
 </tr>
-}
+    }
 
 </table>

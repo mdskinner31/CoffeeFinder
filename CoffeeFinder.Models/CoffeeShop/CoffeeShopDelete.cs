@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeeFinder.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,28 +8,32 @@ using System.Threading.Tasks;
 
 namespace CoffeeFinder.Models
 {
-    public class CoffeeShopEdit
+    public class CoffeeShopDelete
     {
         public int Id { get; set; }
-        [Required]
+
+        public Guid OwnerId { get; set; }
+
         public string Name { get; set; }
 
-        [Required]
+
         public string StreetAddress { get; set; }
 
-        [Required]
+
         public string City { get; set; }
 
-        [Required]
+
         public string State { get; set; }
 
-        [Required]
+
         public string ZipCode { get; set; }
 
 
         public string Phone { get; set; }
 
         public string Website { get; set; }
+
+
 
         /*public virtual Ratings Ratings { get; set; }
         */
@@ -51,6 +56,23 @@ namespace CoffeeFinder.Models
         [Display(Name = "Is WiFi available?")]
         public bool IsWifiAvailable { get; set; }
 
-        
+        public virtual List<Rate> Rates { get; set; } = new List<Rate>();
+
+        public double Rating
+        {
+            get
+            {
+                double totalAverageRating = 0;
+
+                foreach (var rate in Rates)
+                {
+                    totalAverageRating += rate.Rating;
+                }
+
+                return Rates.Count > 0
+                    ? Math.Round(totalAverageRating / Rates.Count, 2) : 0;
+            }
+
+        }
     }
 }

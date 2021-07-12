@@ -14,14 +14,15 @@ namespace CoffeeFinder.Services
 
         public MenuService(Guid userId)
         {
-        _userId = userId;
+            _userId = userId;
         }
 
-    public bool CreateMenu(MenuCreate model)
-    {
-        var entity =
-            new Menu()
+        public bool CreateMenu(MenuCreate model)
+        {
+            var entity =
+                new Menu()
             {
+                 OwnerId = _userId,
                  Id = model.Id,
                  Name = model.Name,
                  Description = model.Description,
@@ -31,20 +32,20 @@ namespace CoffeeFinder.Services
 
             };
 
-        using (var ctx = new ApplicationDbContext())
-        {
-            ctx.Menus.Add(entity);
-            return ctx.SaveChanges() == 1;
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Menus.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
         }
-    }
 
     
 
-    public IEnumerable<MenuListItem> GetMenus()
-    {
-        using (var ctx = new ApplicationDbContext())
+        public IEnumerable<MenuListItem> GetMenus()
         {
-            var query =
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
                 ctx
                     .Menus
                     .Where(e => e.Id == e.Id)
@@ -64,16 +65,16 @@ namespace CoffeeFinder.Services
                     );
 
             return query.ToArray();
-        }
+            }
     }
     public MenuDetail GetMenuById(int id)
     {
         using (var ctx = new ApplicationDbContext())
         {
-            var entity =
-                ctx
-                    .Menus
-                    .Single(e => e.Id == id && e.Id == id);
+                var entity =
+                    ctx
+                        .Menus
+                        .Single(e => e.Id == id && e.Id == e.Id);
             return
                 new MenuDetail
                 {
@@ -91,10 +92,10 @@ namespace CoffeeFinder.Services
     {
         using (var ctx = new ApplicationDbContext())
         {
-            var entity =
-                ctx
-                    .Menus
-                    .Single(e => e.Id == model.Id && e.Id == model.Id);
+                var entity =
+                    ctx
+                        .Menus
+                        .Single(e => e.Id == model.Id && e.Id == e.Id);
 
             entity.Id = model.Id;
             entity.Name = model.Name;
@@ -114,7 +115,7 @@ namespace CoffeeFinder.Services
                 var entity =
                 ctx
                     .Menus
-                    .Single(e => e.Id == id && e.Id == e.Id);
+                    .Single(e => e.Id == id);// && e.CoffeeShopId == e.CoffeeShopId);
 
                 ctx.Menus.Remove(entity);
 

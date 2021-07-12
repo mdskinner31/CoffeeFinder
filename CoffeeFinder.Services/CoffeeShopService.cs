@@ -48,13 +48,7 @@ namespace CoffeeFinder.Services
             }
         }
         
-        //public IEnumerable<CoffeeShop> GetCoffeeShops()
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        return ctx.CoffeeShops.ToList();
-        //    }
-        //}
+        
 
         public IEnumerable<CoffeeShopListItem> GetCoffeeShops()
         {
@@ -63,7 +57,7 @@ namespace CoffeeFinder.Services
                 var query =
                     ctx
                         .CoffeeShops
-                        .Where(e => e.OwnerId == _userId)
+                       .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
                                 new CoffeeShopListItem
@@ -92,6 +86,9 @@ namespace CoffeeFinder.Services
                 return query.ToArray();
             }
         }
+
+        
+
         public CoffeeShopDetail GetCoffeeShopById(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -132,6 +129,7 @@ namespace CoffeeFinder.Services
                         .CoffeeShops
                         .Single(e => e.Id == model.Id && e.OwnerId == _userId);
                         
+                        
                         entity.Id = model.Id;
                         entity.Name = model.Name;
                         entity.StreetAddress = model.StreetAddress;
@@ -148,10 +146,6 @@ namespace CoffeeFinder.Services
                         entity.IsDriveThru = model.IsDriveThru;
                         entity.IsWifiAvailable = model.IsWifiAvailable;
                 
-                        
-
-
-
 
                 return ctx.SaveChanges() == 1;
             }
@@ -164,7 +158,8 @@ namespace CoffeeFinder.Services
                 var entity =
                     ctx
                         .CoffeeShops
-                        .Single(e => e.Id == id && e.OwnerId == _userId);
+                        .Single(e => e.Id == id && e.Id == e.Id);
+                       // .Single(e => e.Id == id && e.OwnerId == _userId);
 
                 ctx.CoffeeShops.Remove(entity);
 

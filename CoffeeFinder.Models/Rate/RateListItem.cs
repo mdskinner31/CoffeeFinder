@@ -14,6 +14,8 @@ namespace CoffeeFinder.Models
         [Display(Name = "Coffee Shop")]
         public int CoffeeShopId {get; set;}
 
+        public string Name { get; set; }
+
         [Display(Name = "Customer Service Rating")]
         public double CustomerService { get; set; }
 
@@ -27,7 +29,7 @@ namespace CoffeeFinder.Models
         public double AvailableAmenities { get; set; }
 
         [Display(Name = "Average Rating")]
-        public double AverageRating //{ get; set; }
+        public double Rating //{ get; set; }
         { get
 
             {
