@@ -4068,6 +4068,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav > li.disabled > a {
   color: #777777;
+  
 }
 .nav > li.disabled > a:hover,
 .nav > li.disabled > a:focus {
@@ -4113,6 +4114,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #555555;
   cursor: default;
   background-color: #fff;
+  
   border: 1px solid #ddd;
   border-bottom-color: transparent;
 }
@@ -5036,18 +5038,20 @@ a.badge:focus {
     padding-bottom: 30px;
     margin-bottom: 30px;
     color: inherit;
-    background-image: url(Images/mike-kenneally-TD4DBagg2wE-unsplash.jpg)
-    /*background-color: beige /* #eeeeee;*/
+    background-color: #eeeeee;
+   
+    
 }
-.jumbotron h1,
-.jumbotron .h1 {
-  /*color: inherit;*/
-  color: white;
-}
+    .jumbotron h1,
+    .jumbotron .h1 {
+        color: inherit;
+        
+    }
 .jumbotron p {
   margin-bottom: 15px;
   font-size: 21px;
   font-weight: 200;
+  
 }
 .jumbotron > hr {
   border-top-color: #d5d5d5;

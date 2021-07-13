@@ -15,7 +15,7 @@ namespace CoffeeFinder.WebMVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "You shouldn't be here!!!";
+            ViewBag.Message = "Sorry we can't find you.";
 
             return View();
         }

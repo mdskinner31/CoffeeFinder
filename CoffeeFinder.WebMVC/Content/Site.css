@@ -1,6 +1,47 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: white;
+    background-image:url("Images/nathan-dumlao-Y3AqmbmtLQI-unsplash.jpg");
+    
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+.btn-info:hover {
+    color: black;
+    background-color: white;
+    border-color: #269abc;
+}
+/*ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+   
+    
+}*/
+li a{
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+
+}
+nav-bar-color{
+    color: dodgerblue;
+    /*background-image: url("~Images/mike-kenneally-TD4DBagg2wE-unsplash.jpg");*/
+}
+
+li a:hover {
+    background-color: blue;
+    color: black;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -9,10 +50,14 @@
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
+    
+
+
+
+    /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
+    .dl-horizontal dt {
     white-space: normal;
 }
 
@@ -22,3 +67,17 @@ select,
 textarea {
     max-width: 280px;
 }
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: white;
+    background-image: url("Images/mike-kenneally-TD4DBagg2wE-unsplash.jpg");
+    /*text-decoration-color: white;*/
+    
+}
+    .jumbotron h1,
+    .jumbotron .h1 {
+        color: white;
+    }
+    
