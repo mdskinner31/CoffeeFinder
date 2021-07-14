@@ -12,12 +12,13 @@ namespace CoffeeFinder.Data
         public int Id { get; set; }
 
         public Guid OwnerId { get; set; }
-
-        //public int CoffeeShopId { get; set; }
-        //[ForeignKey("CoffeeShopId")]
+        //[ForeignKey("CoffeeShop")]
+        public int CoffeeShopId { get; set; }
+        
 
         //public virtual CoffeeShop CoffeeShop { get; set; }
-
+        
+        //public string CoffeeShopName { get; set; }
 
         public string Name { get; set; }
 

@@ -24,6 +24,7 @@ namespace CoffeeFinder.Services
                 OwnerId = _userId,
                 Id = model.Id,
                 CoffeeShopId = model.CoffeeShopId,
+                
                 CustomerService = model.CustomerService,
                 CoffeeSelection = model.CoffeeSelection,
                 Cleanliness = model.Cleanliness,
@@ -50,6 +51,7 @@ namespace CoffeeFinder.Services
                         {
                             Id = e.Id,
                             CoffeeShopId = e.CoffeeShopId,
+                            Name = e.CoffeeShop.Name,
                             CustomerService = e.CustomerService,
                             CoffeeSelection = e.CoffeeSelection,
                             Cleanliness = e.Cleanliness,
@@ -77,6 +79,7 @@ namespace CoffeeFinder.Services
                     {
                         Id = entity.Id,
                         CoffeeShopId = entity.CoffeeShopId,
+                        Name = entity.CoffeeShop.Name,
                         CustomerService = entity.CustomerService,
                         CoffeeSelection = entity.CoffeeSelection,
                         Cleanliness = entity.Cleanliness,
@@ -100,6 +103,7 @@ namespace CoffeeFinder.Services
 
                 entity.Id = model.Id;
                 entity.CoffeeShopId = model.CoffeeShopId;
+     
                 entity.CustomerService = model.CustomerService;
                 entity.CoffeeSelection = model.CoffeeSelection;
                 entity.Cleanliness = model.Cleanliness;

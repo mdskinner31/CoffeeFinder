@@ -25,7 +25,11 @@
         <th>
             @Html.DisplayNameFor(model => model.CoffeeShopId)
         </th>
-        
+
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.CustomerService)
         </th>
@@ -52,7 +56,11 @@
     <td>
         @Html.DisplayFor(modelItem => item.CoffeeShopId)
     </td>
-   
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+
     <td>
         @Html.DisplayFor(modelItem => item.CustomerService)
     </td>

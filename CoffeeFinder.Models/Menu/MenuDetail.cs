@@ -12,6 +12,12 @@ namespace CoffeeFinder.Models
 
         public int CoffeeShopId { get; set; }
 
+        public string CoffeeShopName
+        {
+            get; set;
+        }
+        
+
         public string Name { get; set; }
 
         public string Description { get; set; }

@@ -24,6 +24,7 @@ namespace CoffeeFinder.Services
             {
                  OwnerId = _userId,
                  Id = model.Id,
+                 
                  Name = model.Name,
                  Description = model.Description,
                  Price = model.Price,
@@ -54,6 +55,7 @@ namespace CoffeeFinder.Services
                             new MenuListItem
                             {
                                  Id = e.Id,
+                                 //CoffeeShopName = e.CoffeeShop.Name,
                                  Name = e.Name,
                                  Description = e.Description,
                                  Price = e.Price,
@@ -79,6 +81,7 @@ namespace CoffeeFinder.Services
                 new MenuDetail
                 {
                     Id = entity.Id,
+                    //CoffeeShopName = entity.CoffeeShop.Name,
                     Name = entity.Name,
                     Description = entity.Description,
                     Price = entity.Price,
@@ -98,6 +101,7 @@ namespace CoffeeFinder.Services
                         .Single(e => e.Id == model.Id && e.Id == e.Id);
 
             entity.Id = model.Id;
+            //entity.Name = model.CoffeeShopName;
             entity.Name = model.Name;
             entity.Description = model.Description;
             entity.Price = model.Price;

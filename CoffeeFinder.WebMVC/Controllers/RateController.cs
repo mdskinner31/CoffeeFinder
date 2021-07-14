@@ -80,6 +80,7 @@ namespace CoffeeFinder.WebMVC.Controllers
                 {
                     Id = detail.Id,
                     CoffeeShopId = detail.CoffeeShopId,
+                    
                     CustomerService = detail.CustomerService,
                     CoffeeSelection = detail.CoffeeSelection,
                     Cleanliness = detail.Cleanliness,

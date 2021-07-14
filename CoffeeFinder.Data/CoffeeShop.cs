@@ -51,7 +51,8 @@ namespace CoffeeFinder.Data
             }
         }
 
-
+        //public virtual Menu Menus { get; set; }
+        //public string Menu { get; set; }
 
         //public string MenuItemsId { get; set; }
 
